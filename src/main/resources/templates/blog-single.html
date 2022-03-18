@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US"  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moschino | Minimalist Free HTML Portfolio by WowThemes.net</title>
+<link rel='stylesheet' th:href='@{/css/woocommerce-layout.css}' type='text/css' media='all'/>
+<link rel='stylesheet' th:href='@{/css/woocommerce-smallscreen.css}' type='text/css' media='only screen and (max-width: 768px)'/>
+<link rel='stylesheet' th:href='@{/css/woocommerce.css}' type='text/css' media='all'/>
+<link rel='stylesheet' th:href='@{/css/font-awesome.min.css}' type='text/css' media='all'/>
+<link rel='stylesheet' th:href='@{/style.css}' type='text/css' media='all'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all'/>
+<link rel='stylesheet' th:href='@{/css/easy-responsive-shortcodes.css}' type='text/css' media='all'/>
+	<link rel = "icon" th:href="@{/image/me.jpeg}" type = "image/x-icon">
+</head>
+<body class="single single-post">
+<div id="page">
+	<div class="container">
+		<header id="masthead" class="site-header" th:include="component/header::header">
+			<!--	Fragment included form the header.html file		-->
+		</header>
+		<!-- #masthead -->
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column two-thirds">
+				<main id="main" class="site-main" role="main">
+				<article>
+				<header class="entry-header">
+				<h1 class="entry-title" th:text="${blog.name}"></h1>
+				<div class="entry-meta">
+						<span class="posted-on"><time class="entry-date published" th:text="${blog.date}"></time></span>
+						<span class="comments-link"><a href="#commentform">Leave a comment</a></span>
+					</div>
+				<div class="entry-thumbnail">					
+					<img th:src="@{/image/blog/}+${blog.image}" alt="">
+				</div>
+				</header>
+				<!-- .entry-header -->
+				<div class="entry-content" th:text="${blog.about}">
+
+				</div>
+				<!-- .entry-content -->
+
+				<!-- .entry-footer -->
+				</article>
+				<!-- #post-## -->
+				<!-- .navigation -->
+				<div id="comments" class="comments-area">
+					<div id="respond" class="comment-respond">
+						<div>
+							Comments
+							<div th:each="Comments:${comments}">
+								<div>
+									<span style="font-size:20px;font-weight:bold;color: black;" th:text="@{Comments.name}"></span>
+								</div>
+								<div style="padding-left: 40px;">
+									<span th:text="${Comments.comment}"></span>
+								</div>
+								</br>
+							</div>
+						</div>
+						<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/demo-moschino/embed-audio/#respond" style="display:none;">Cancel reply</a></small></h3>
+						<form method="post" id="commentform" class="comment-form" novalidate="">
+							<p class="comment-notes">
+								<span id="email-notes">Your email address will not be published.</span>
+									Required fields are marked
+								<span class="required">*</span>
+							</p>
+							<p class="comment-form-comment">
+								<label for="comment">Comment</label>
+								<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
+							</p>
+							<p class="comment-form-author">
+								<label for="author">Name <span class="required">*</span></label>
+								<input id="author" name="name" type="text" value="" size="30" aria-required="true" required="required">
+							</p>
+							<p class="comment-form-email">
+								<label for="email">Email <span class="required">*</span></label>
+								<input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required">
+							</p>
+							<p class="form-submit">
+								<input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+							</p>
+							<noscript>
+							</noscript>
+						</form>
+					</div>
+					<!-- #respond -->
+				</div>
+				<!-- #comments -->
+				</main>
+				<!-- #main -->
+			</div>
+			<div id="secondary" class="column third">
+				<div id="sidebar-1" class="widget-area" role="complementary">
+					<aside id="text-5" class="widget widget_text">
+						<h4 class="widget-title">About Me</h4>
+						<div class="textwidget">
+							<p>
+								<img th:src="@{/image/me.jpeg}" class="alignleft" style="width:80px;border-radius:50%;margin-bottom:0;">
+								I am Bhupendra sambare java developer learning and building a new Java Program to withstand the importance and knowledge of Wed technology in daily life.
+							</p>
+						</div>
+					</aside>
+					<aside id="recent-posts-2" class="widget widget_recent_entries">
+						<h4 class="widget-title">Recent Posts</h4>
+						<ul>
+							<li	th:each="r:${recent}">
+								<a th:href="@{'/blog/'+${r.id}}" th:text="${r.name}"></a>
+							</li>
+						</ul>
+					</aside>
+				</div>
+				<!-- .widget-area -->
+			</div>
+			<!-- #secondary -->
+		</div>
+		<!-- #content -->
+	</div>
+	<!-- .container -->
+	<footer id="colophon" class="site-footer" th:include="component/header::footer">
+
+	</footer>
+	<a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+</div>
+<!-- #page -->
+<script th:src='@{/js/jquery.js}'></script>
+<script th:src='@{/js/plugins.js}'></script>
+<script th:src='@{/js/scripts.js}'></script>
+<script th:src='@{/js/masonry.pkgd.min.js}'></script>
+</body>
+</html>

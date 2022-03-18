@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <header id="masthead" class="site-header" th:fragment="header">
+        <div class="site-branding">
+            <h1 class="site-title"><a th:href="@{/index}" rel="home">Bhupendra Sambare</a></h1>
+            <h2 class="site-description">Java Developer</h2>
+        </div>
+        <nav id="site-navigation" class="main-navigation">
+            <button class="menu-toggle">Menu</button>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+            <div class="menu-menu-1-container">
+                <ul id="menu-menu-1" class="menu">
+                    <li><a th:href="@{/index}">Photpolio</a></li>
+                    <li><a th:href="@{/about}">About</a></li>
+                    <li><a th:href="@{/blog}">Blog</a></li>
+                    <li><a th:href="@{/contact}">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div th:fragment="footer">
+        <div class="container">
+            <div class="site-info">
+                <h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">Bhupendra sambare</h1>
+                <a target="blank" href="https://www.wowthemes.net/">&copy; Bhupendra sambare - JAVA Developer</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

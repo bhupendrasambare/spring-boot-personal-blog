@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title th:text="${header}"></title>
+    <link rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha512-c93ifPoTvMdEJH/rKIcBx//AL1znq9+4/RmMGafI/vnTFe/dKwnn1uoeszE2zJBQTS1Ck5CqSBE+34ng2PthJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body id="page-top">
+<div id="wrapper">
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" th:include="admin/components/navbar::sidebar">
+
+    </nav>
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top" th:include="admin/components/navbar::navbar">
+
+            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-3">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 fw-bold"><a th:href="@{/admin/addblog}">Add Blogs <i class="fa fa-plus-circle"></i> </a></p>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Details</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Tags</th>
+                                            <th scope="col">Views</th>
+                                            <th scope="col">Edit</th>
+                                            <th scope="col">Delete</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="blog : ${blogs}">
+                                                <td scope="row"><img th:src="@{/image/blog/} + ${blog.image}" height="40px"/></td>
+                                                <td th:text="${blog.name}"></td>
+                                                <td th:text="${#strings.abbreviate(blog.about,150)} "></td>
+                                                <td th:text="${blog.date}"></td>
+                                                <td th:text="${blog.tags}"></td>
+                                                <td th:text="${blog.views}"></td>
+                                                <td><a th:href="@{'/admin/blog/edit/' + ${blog.id}}"><button class="btn btn-warning">Edit</button></a></td>
+                                                <td><a th:href="@{'/admin/blog/delete/' + ${blog.id}}"><button class="btn btn-danger">Delete</button></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"><span>Copyright © Brand 2021</span></div>
+            </div>
+        </footer>
+    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/theme.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Moschino | Minimalist Free HTML Portfolio by WowThemes.net</title>
+	<link rel='stylesheet' th:href='@{/css/woocommerce-layout.css}' type='text/css' media='all'/>
+	<link rel='stylesheet' th:href='@{/css/woocommerce-smallscreen.css}' type='text/css' media='only screen and (max-width: 768px)'/>
+	<link rel='stylesheet' th:href='@{/css/woocommerce.css}' type='text/css' media='all'/>
+	<link rel='stylesheet' th:href='@{/css/font-awesome.min.css}' type='text/css' media='all'/>
+	<link rel='stylesheet' th:href='@{/style.css}' type='text/css' media='all'/>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all'/>
+	<link rel='stylesheet' th:href='@{/css/easy-responsive-shortcodes.css}' type='text/css' media='all'/>
+	<link rel = "icon" th:href="@{/image/me.jpeg}" type = "image/x-icon">
+</head>
+<body class="home page page-template page-template-template-portfolio page-template-template-portfolio-php">
+<div id="page">
+	<div class="container">
+		<header id="masthead" class="site-header" th:include="component/header::header">
+			<!--	Fragment included form the header.html file		-->
+		</header>
+		<!-- #masthead -->
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column two-thirds single-portfolio">
+				<main id="main" class="site-main">
+				
+				<article class="portfolio hentry">
+				<header class="entry-header">
+				<div class="entry-thumbnail">
+					<img th:src="@{/image/photpolio/}+${photpolio.image}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="p1"/>
+				</div>
+				<h1 class="entry-title" th:text="${photpolio.name}"></h1>
+					<a class='portfoliotype' href='portfolio-category.html' th:each="tag:${tags}" th:text="${tag}">summer</a>
+				</header>
+				<div class="entry-content" th:text="${photpolio.details}">
+
+				</div>
+				</article>
+				<!-- .navigation -->
+				
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+			
+			<div id="secondary" class="column third">
+				<div class="widget-area">
+					<aside class="widget">
+						<h4 class="widget-title">Request similar project</h4>
+						<form class="wpcf7" method="post" id="contactform">
+							<div class="form">
+								<p><input type="text" name="name" placeholder="Name *"></p>
+								<p><input type="text" name="email" placeholder="E-mail Address *"></p>
+								<p><textarea name="comment" rows="3" placeholder="Message *"></textarea></p>
+								<input type="submit" id="submit" class="clearfix btn" value="Send">
+							</div>
+						</form>
+						<div class="done">								
+							Your message has been sent. Thank you!
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+		<!-- #content -->
+	</div>
+	<!-- .container -->
+	<footer id="colophon" class="site-footer" th:include="component/header::footer">
+
+	</footer>
+	<a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+</div>
+<!-- #page -->
+<script src='js/jquery.js'></script>
+<script src='js/plugins.js'></script>
+<script src='js/scripts.js'></script>
+<script src='js/masonry.pkgd.min.js'></script>
+<script src='js/validate.js'></script>
+</body>
+</html>
