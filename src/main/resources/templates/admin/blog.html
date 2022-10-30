@@ -48,7 +48,7 @@
                                         </thead>
                                         <tbody>
                                             <tr th:each="blog : ${blogs}">
-                                                <td scope="row"><img th:src="@{/image/blog/} + ${blog.image}" height="40px"/></td>
+                                                <td scope="row"><img th:src="@{/image/photpolio/} + ${blog.image}" height="40px"/></td>
                                                 <td th:text="${blog.name}"></td>
                                                 <td th:text="${#strings.abbreviate(blog.about,150)} "></td>
                                                 <td th:text="${blog.date}"></td>
