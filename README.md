@@ -55,9 +55,9 @@ A personal blog is a one-way communication blogging website where the client can
 
 
 
-> http://localhost:8080/admin/blog <img src=".screenshoot/screencapture-localhost-8080-admin-blog-2022-11-01-13_11_35.png"></img>
+> http://localhost:8080/admin/blog <img src="./screenshoot/screencapture-localhost-8080-admin-blog-2022-11-01-13_11_35.png"></img>
 
-> http://localhost:8080/admin/index <img src="./screencapture-localhost-8080-admin-2022-11-01-13_11_29.pngg"></img>
+> http://localhost:8080/admin/index <img src="./screenshoot/screencapture-localhost-8080-admin-2022-11-01-13_11_29.png"></img>
 
 > http://localhost:8080/admin/feedback <img src="./screenshoot/screencapture-localhost-8080-admin-feedback-2022-11-01-13_11_43.png"></img>
 
