@@ -1,7 +1,7 @@
 # Spring Boot Personal Blog
 ## Based on Spring Boot and Hibernate
 
-A personal blog is a one-way communication blogging website where the client can share their thoughts with the people. He can add edit his portfolio, manage his application and get feedback through comments. We are using Hibernate H2 database for database management and bootstrap, JQuery for client side operations.
+A personal blog is a one-way communication blogging website where the client can share their thoughts with the people. He can add edit his portfolio, manage his application and get feedback through comments. We are using Hibernate H2 database for database management and Bootstrap, JQuery for client-side operations.
 
 ## Features
 
@@ -25,16 +25,16 @@ A personal blog is a one-way communication blogging website where the client can
 > Admin To User Communication
 
 
-## Rquirements:
+## Requirements:
 * apache maven 3.8.4
 
 * java jdk 8 or 8+
 
 ## Start project
 
->unzip the project
+> Unzip the project
 >
->locate the folder in cmd/terminal
+> Locate the folder in cmd/terminal
 >
 >run mvn spring-boot:run
 
